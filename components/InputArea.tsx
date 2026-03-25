@@ -37,7 +37,7 @@ export default function InputArea({ value, onChange, onSubmit, disabled, lastCha
         <input
           ref={inputRef}
           type="text"
-          inputMode="kana"
+          inputMode="text"
           value={value}
           onChange={(e) => onChange(e.target.value)}
           onKeyDown={handleKeyDown}
