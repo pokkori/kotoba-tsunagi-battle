@@ -33,6 +33,38 @@ export const viewport: Viewport = {
   themeColor: '#0D1117',
 };
 
+
+const _faqLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "このゲームは無料で遊べますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい、基本プレイは完全無料でお楽しみいただけます。ブラウザから即座にプレイ開始できます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "スマートフォンでも遊べますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい、スマートフォン・タブレット・PCすべてに対応しています。ブラウザからそのままプレイできます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "アプリのダウンロードは必要ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ダウンロード不要です。ブラウザを開いてアクセスするだけですぐに遊べます。"
+      }
+    }
+  ]
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -41,6 +73,11 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(_faqLd) }}
+        />
+
         <link rel="manifest" href="/manifest.json" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
